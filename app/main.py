@@ -35,11 +35,12 @@ def create_app():
 
 
 def create_database(app):
-    if not path.exists("website/" + DB_NAME):
+    if not path.exists(DB_NAME):
         db.create_all(app=app)
         print("Created database!")
 
 
 app = create_app()
+
 if __name__ == '__main__':
     app.run(host="0.0.0.0",port=80,debug=True)
